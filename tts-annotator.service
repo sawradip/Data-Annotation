@@ -1,0 +1,13 @@
+Description=TTS Annotation Service
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/sawradip/Data-Annotation/
+Environment="PATH=/home/ubuntu/sawradip/Data-Annotation/venv"
+ExecStart=/home/ubuntu/sawradip/Data-Annotation/venv/bin/python  manage.py runserver 0.0.0.0:9993
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
